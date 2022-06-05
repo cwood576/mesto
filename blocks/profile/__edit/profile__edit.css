@@ -1,0 +1,10 @@
+.profile__edit {
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    border: 1px solid white;
+    background-image: url(../../../images/pencil.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline;
+}

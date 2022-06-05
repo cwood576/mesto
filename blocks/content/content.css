@@ -1,0 +1,6 @@
+@media screen and (max-width: 425px) {
+    .content {
+        max-width: calc((320 - 38) / 320 * 100vw);
+        margin: auto;
+    }
+}

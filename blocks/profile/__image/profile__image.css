@@ -1,0 +1,25 @@
+.profile__image {
+    border-radius: 50%;
+    background-image: url(../../../images/avatar.jpg);
+    width: calc(120 / 1280 * 100vw);
+    height: calc(120 / 1280 * 100vw);
+    background-size: cover;
+    overflow: hidden;
+    margin: 0 30px 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile__image {
+        width: calc(120 / 1024 * 100vw);
+        height: calc(120 / 1024 * 100vw);
+        margin: 0 18px 0 0;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .profile__image {
+        width: calc(120 / 320 * 100vw);
+        height: calc(120 / 320 * 100vw);
+        margin: 0 auto 23px auto;
+    }
+}

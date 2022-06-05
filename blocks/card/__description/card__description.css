@@ -1,0 +1,30 @@
+.card__description {
+    height: calc(79 / 1280 * 100vw);
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 calc(15 / 1280 * 100vw) 0 calc(21 / 1280 * 100vw);
+    align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .card__description {
+        height: calc(79 / 1024 * 100vw);
+        margin: 0 calc(15 / 1024 * 100vw) 0 calc(21 / 1024 * 100vw);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card__description {
+        height: calc(79 / 768 * 100vw);
+        margin: 0 calc(15 / 768 * 100vw) 0 calc(21 / 768 * 100vw);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .card__description {
+        height: calc(79 / 320 * (100vw + 16px));
+        margin: 0 calc(15 / 320 * 100vw) 0 calc(21 / 320 * 100vw);
+    }
+}

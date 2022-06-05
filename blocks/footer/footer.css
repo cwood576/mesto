@@ -1,0 +1,10 @@
+.footer {
+    margin: calc(67 / 1280 * 100vw) 0 calc(60 / 1280 * 100vw) 0;
+}
+
+@media screen and (max-width: 425px) {
+    .footer {
+        max-width: calc((320 - 38) / 320 * 100vw);
+        margin: calc(48 / 320 * 100vw) auto calc(36 / 320 * 100vw) auto;
+    }
+}

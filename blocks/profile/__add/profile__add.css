@@ -1,0 +1,31 @@
+.profile__add {
+    background-color: black;
+    border: 2px solid white;
+    width: calc(150 / 1280 * 100vw);
+    height: calc(50/ 1280 * 100vw);
+    align-self: center;
+    margin: 0;
+    align-items: center;
+    background-image: url(../../../images/plus.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: calc(22 / 1280 * 100vw) calc(22 / 1280 * 100vw);
+    object-fit: scale-down;
+}
+
+@media screen and (max-width: 678px) {
+    .profile__add {
+        width: 35%;
+        height: calc(100vw * 0.08);
+        background-size: 16px 16px;
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .profile__add {
+        width: 100%;
+        height: calc((100vw - 38px)*(50 / 282));
+        background-size: 16px 16px;
+    }
+}

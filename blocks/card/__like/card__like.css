@@ -1,0 +1,32 @@
+.card__like {
+    background-image: url(../../../images/like.png);
+    background-size: contain;
+    height: calc(19 / 1280 * 100vw);
+    width: calc(22 / 1280 * 100vw);
+    border: 0;
+    background-color: white;
+    align-items: center;
+    align-self: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1024px) {
+    .card__like {
+        height: calc(19 / 1024 * 100vw);
+        width: calc(22 / 1024 * 100vw);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card__like {
+        height: calc(19 / 768 * 100vw);
+        width: calc(22 / 768 * 100vw);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .card__like {
+        height: calc(19 / 425 * 100vw);
+        width: calc(22 / 425 * 100vw);
+    }
+}
