@@ -1,3 +1,7 @@
 .profile__info {
-    align-self: center;
+    align-items: center;
+    align-content: bottom;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
 }

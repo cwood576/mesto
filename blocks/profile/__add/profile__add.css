@@ -11,6 +11,7 @@
     background-position: center;
     background-size: calc(22 / 1280 * 100vw) calc(22 / 1280 * 100vw);
     object-fit: scale-down;
+    display: block;
 }
 
 @media screen and (max-width: 678px) {
@@ -27,5 +28,6 @@
         width: 100%;
         height: calc((100vw - 38px)*(50 / 282));
         background-size: 16px 16px;
+        margin-top: 0;
     }
 }

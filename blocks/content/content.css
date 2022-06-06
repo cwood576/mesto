@@ -1,3 +1,20 @@
+.content {
+    max-width: calc((1280 - 400) / 1280 * 100vw);
+    margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .content {
+        max-width: calc((1024 - 250) / 1024 * 100vw);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        max-width: calc((768 - 150) / 768 * 100vw);
+    }
+}
+
 @media screen and (max-width: 425px) {
     .content {
         max-width: calc((320 - 38) / 320 * 100vw);

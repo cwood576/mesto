@@ -1,25 +1,7 @@
 .page {
-    max-width: calc((1280 - 400) / 1280 * 100vw);
     margin: auto;
     background-color: black;
     color: white;
     font-family: "Inter";
-}
-
-@media screen and (max-width: 1024px) {
-    .page {
-        max-width: calc((1024 - 250) / 1024 * 100vw);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .page {
-        max-width: calc((768 - 150) / 768 * 100vw);
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .page {
-        max-width: 100%;
-    }
+    max-width: 100%;
 }

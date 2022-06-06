@@ -1,5 +1,18 @@
 .footer {
-    margin: calc(67 / 1280 * 100vw) 0 calc(60 / 1280 * 100vw) 0;
+    margin: calc(67 / 1280 * 100vw) auto calc(60 / 1280 * 100vw) auto;
+    max-width: calc((1280 - 400) / 1280 * 100vw);
+}
+
+@media screen and (max-width: 1024px) {
+    .footer {
+        max-width: calc((1024 - 250) / 1024 * 100vw);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        max-width: calc((768 - 150) / 768 * 100vw);
+    }
 }
 
 @media screen and (max-width: 425px) {

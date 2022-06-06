@@ -1,0 +1,16 @@
+.popup__status {
+    width: calc(((430 - 72) / 430) * 100%);
+    margin: 0 auto 48px auto;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    padding: calc(13 / 1280 * 100vw) 0 calc(13 / 1280 * 100vw) 0;
+}
+
+@media screen and (max-width: 678px) {
+    .popup__status {
+        margin: 0 auto 45px auto;
+    }
+}

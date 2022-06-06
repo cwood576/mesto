@@ -1,0 +1,17 @@
+.popup__close {
+    position: absolute;
+    left: 101%;
+    top: -11%;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 425px) {
+    .popup__close {
+        left: 91%;
+        top: -13%;
+        width: 20px;
+        height: 20px;
+    }
+}
