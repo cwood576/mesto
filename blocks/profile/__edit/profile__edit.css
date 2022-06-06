@@ -6,4 +6,10 @@
     background-image: url(../../../images/pencil.png);
     background-repeat: no-repeat;
     background-position: center;
+    transition: 0.7s;
+}
+
+.profile__edit:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }
