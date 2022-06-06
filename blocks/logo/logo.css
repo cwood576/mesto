@@ -18,6 +18,5 @@
     .logo {
         max-width: calc((320 - 38) / 320 * 100vw);
         margin-left: calc((27 / 320) * 100%);
-        ;
     }
 }
