@@ -13,6 +13,11 @@ popupStatus.value = status.innerText;
 
 function openPopup() {
     popup.classList.add('popup_opened');
+    document.addEventListener("keypress", function(e) {
+        if (e.key === 'Enter') {
+            saveProfile()
+        }
+    });
 }
 
 function closePopup() {
