@@ -7,9 +7,18 @@
     background-repeat: no-repeat;
     background-position: center;
     transition: 0.7s;
+    background-size: 10px 10px;
 }
 
 .profile__edit:hover {
     opacity: 0.6;
     cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+    .profile__edit {
+        width: 16px;
+        height: 16px;
+        background-size: 7.5px 7.5px;
+    }
 }

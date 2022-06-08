@@ -1,6 +1,13 @@
 .footer {
-    margin: calc(67 / 1280 * 100vw) auto calc(60 / 1280 * 100vw) auto;
-    max-width: calc((1280 - 400) / 1280 * 100vw);
+    margin: 67px auto 60px auto;
+    max-width: 880px;
+}
+
+@media screen and (max-width: 1279px) {
+    .footer {
+        margin: calc(67 / 1280 * 100vw) auto calc(60 / 1280 * 100vw) auto;
+        max-width: calc((1280 - 400) / 1280 * 100vw);
+    }
 }
 
 @media screen and (max-width: 1024px) {

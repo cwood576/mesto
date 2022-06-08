@@ -10,17 +10,17 @@
 </head>
 
 <body class="page">
-    <section class="popup">
+    <div class="popup">
         <div class="popup__container">
-            <img src="./images/closeicon.png" alt="Иконка закрытия попапа" class="popup__close">
-            <p class="popup__text">Редактировать профиль</p>
-            <form class="popup__form">
-                <input type="text" class="popup__name">
-                <input type="text" class="popup__status">
-                <div class="popup__button">Сохранить</div>
+            <button src="./images/closeicon.png" alt="Иконка закрытия попапа" class="popup__close"> </button>
+            <h2 class="popup__text">Редактировать профиль</h2>
+            <form class="popup__form" name="popup__form" method="POST">
+                <input type="text" class="popup__name" name="popup__name" placeholder="Имя">
+                <input type="text" class="popup__status" name="popup__status" placeholder="О себе">
+                <button class="popup__button" type="submit">Сохранить</button>
             </form>
         </div>
-    </section>
+    </div>
     <header class="header">
         <div class="logo"></div>
     </header>
@@ -31,65 +31,72 @@
             <div class="profile__leftside">
                 <div class="profile__image"></div>
                 <div class="profile__info">
-                    <h2 class="profile__name">Жак-Ив Кусто </h2>
-                    <div class="profile__edit"></div>
-                    <p class="profile__status">Исследователь океана</p>
+                    <h1 class="profile__name">Жак-Ив Кусто </h1>
+                    <button type="button" id="edit" class="profile__edit "></button>
+                    <p class="profile__status ">Исследователь океана</p>
                 </div>
             </div>
-            <div class="profile__add"></div>
+            <button type="button" class="profile__add "></button>
         </section>
 
-        <section class="cards">
-            <div class="card">
-                <img src="./images/karachaevsk.jpg" alt="Здесь могла быть ваша картинка" class="card__image">
-                <div class="card__description">
-                    <p class="card__name">Карачаевск</p>
-                    <div class="card__like"></div>
+        <section class="cards ">
+            <div class="card ">
+                <img src="./images/karachaevsk.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
+                <div class="card__description ">
+                    <h2 class="card__name ">Карачаевск</h2>
+                    <button type="button" class="card__like ">
+                        </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="./images/elbrus.jpg" alt="Здесь могла быть ваша картинка" class="card__image">
-                <div class="card__description">
-                    <p class="card__name">Гора Эльбрус</p>
-                    <div class="card__like"></div>
+            <div class="card ">
+                <img src="./images/elbrus.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
+                <div class="card__description ">
+                    <h2 class="card__name ">Гора Эльбрус</h2>
+                    <button type="button" class="card__like ">
+                        </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="./images/dombay.jpg" alt="Здесь могла быть ваша картинка" class="card__image">
-                <div class="card__description">
-                    <p class="card__name">Домбай</p>
-                    <div class="card__like"></div>
+            <div class="card ">
+                <img src="./images/dombay.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
+                <div class="card__description ">
+                    <h2 class="card__name ">Домбай</h2>
+                    <button type="button" class="card__like ">
+                        </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="./images/elbrus.jpg" alt="Здесь могла быть ваша картинка" class="card__image">
-                <div class="card__description">
-                    <p class="card__name">Гора Эльбрус</p>
-                    <div class="card__like"></div>
+            <div class="card ">
+                <img src="./images/elbrus.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
+                <div class="card__description ">
+                    <h2 class="card__name ">Гора Эльбрус</h2>
+                    <button type="button" class="card__like ">
+                        </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="./images/dombay.jpg" alt="Здесь могла быть ваша картинка" class="card__image">
-                <div class="card__description">
-                    <p class="card__name">Домбай</p>
-                    <div class="card__like"></div>
+            <div class="card ">
+                <img src="./images/dombay.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
+                <div class="card__description ">
+                    <h2 class="card__name ">Домбай</h2>
+                    <button type="button" class="card__like ">
+                        </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="./images/karachaevsk.jpg" alt="Здесь могла быть ваша картинка" class="card__image">
-                <div class="card__description">
-                    <p class="card__name">Карачаево-Черкессия</p>
-                    <div class="card__like"></div>
+            <div class="card ">
+                <img src="./images/karachaevsk.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
+                <div class="card__description ">
+                    <h2 class="card__name ">Карачаево-Черкессия</h2>
+                    <button type="button" class="card__like ">
+                        </button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer">
-        <p class="copyright">© 2020 Mesto Russia</p>
+    <footer class="footer ">
+        <p class="copyright ">© 2020 Mesto Russia</p>
     </footer>
-    <script src="./script.js"></script>
+
+    <script src="./scripts/script.js "></script>
 </body>
 
 </html>
