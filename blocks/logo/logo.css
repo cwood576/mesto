@@ -8,7 +8,6 @@
 
 @media screen and (max-width: 768px) {
     .logo {
-        background-image: url(../../images/logo.svg);
         width: 103px;
         height: 25px;
     }

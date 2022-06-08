@@ -2,7 +2,7 @@
     width: calc(((430 - 72) / 430) * 100%);
     margin: 0 auto 48px auto;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;

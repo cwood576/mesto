@@ -1,11 +1,18 @@
 .card__description {
-    height: calc(79 / 1280 * 100vw);
+    height: 79px;
     color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 calc(15 / 1280 * 100vw) 0 calc(21 / 1280 * 100vw);
+    margin: 0 15px 0 21px;
     align-items: center;
+}
+
+@media screen and (max-width: 1279px) {
+    .card__description {
+        height: calc(79 / 1280 * 100vw);
+        margin: 0 calc(15 / 1280 * 100vw) 0 calc(21 / 1280 * 100vw);
+    }
 }
 
 @media screen and (max-width: 1024px) {

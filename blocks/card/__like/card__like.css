@@ -1,14 +1,21 @@
 .card__like {
     background-image: url(../../../images/like.png);
     background-size: contain;
-    height: calc(19 / 1280 * 100vw);
-    width: calc(22 / 1280 * 100vw);
+    height: 19px;
+    width: 22px;
     border: 0;
     background-color: white;
     align-items: center;
     align-self: center;
     background-repeat: no-repeat;
     transition: 0.7s;
+}
+
+@media screen and (max-width: 1279px) {
+    .card__like {
+        height: calc(19 / 1280 * 100vw);
+        width: calc(22 / 1280 * 100vw);
+    }
 }
 
 .card__like:hover {
