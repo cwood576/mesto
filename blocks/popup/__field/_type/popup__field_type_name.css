@@ -1,0 +1,16 @@
+.popup__field_type_name {
+    margin: 0 auto 30px auto;
+    padding: 13px 0 13px 0;
+}
+
+@media screen and (max-width: 678px) {
+    .popup__field_type_name {
+        margin: 0 auto 40px auto;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .popup__field_type_name {
+        margin: 0 auto 30px auto;
+    }
+}
