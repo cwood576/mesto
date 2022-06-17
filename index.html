@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./pages/index.css">
 </head>
 
-<body class="page">
+<body class="page preload">
 
     <header class="header">
         <div class="logo"></div>
@@ -22,7 +22,7 @@
                 <div class="profile__image"></div>
                 <div class="profile__info">
                     <h1 class="profile__name">Жак-Ив Кусто </h1>
-                    <button type="button" id="edit" class="profile__edit "></button>
+                    <button type="button" class="profile__edit "></button>
                     <p class="profile__status ">Исследователь океана</p>
                 </div>
             </div>
@@ -30,54 +30,7 @@
         </section>
 
         <section class="cards ">
-            <div class="card ">
-                <img src="./images/karachaevsk.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
-                <div class="card__description ">
-                    <h2 class="card__name ">Карачаевск</h2>
-                    <button type="button" class="card__like ">
-                        </button>
-                </div>
-            </div>
-            <div class="card ">
-                <img src="./images/elbrus.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
-                <div class="card__description ">
-                    <h2 class="card__name ">Гора Эльбрус</h2>
-                    <button type="button" class="card__like ">
-                        </button>
-                </div>
-            </div>
-            <div class="card ">
-                <img src="./images/dombay.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
-                <div class="card__description ">
-                    <h2 class="card__name ">Домбай</h2>
-                    <button type="button" class="card__like ">
-                        </button>
-                </div>
-            </div>
-            <div class="card ">
-                <img src="./images/elbrus.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
-                <div class="card__description ">
-                    <h2 class="card__name ">Гора Эльбрус</h2>
-                    <button type="button" class="card__like ">
-                        </button>
-                </div>
-            </div>
-            <div class="card ">
-                <img src="./images/dombay.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
-                <div class="card__description ">
-                    <h2 class="card__name ">Домбай</h2>
-                    <button type="button" class="card__like ">
-                        </button>
-                </div>
-            </div>
-            <div class="card ">
-                <img src="./images/karachaevsk.jpg " alt="Здесь могла быть ваша картинка " class="card__image ">
-                <div class="card__description ">
-                    <h2 class="card__name ">Карачаево-Черкессия</h2>
-                    <button type="button" class="card__like ">
-                        </button>
-                </div>
-            </div>
+
         </section>
 
     </main>
@@ -86,18 +39,46 @@
         <p class="copyright ">© 2020 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup__profile">
         <div class="popup__container">
-            <button type="button" class="popup__close"> </button>
+            <button type="button" class="popup__close popup__close_name_profile"> </button>
             <h2 class="popup__text">Редактировать профиль</h2>
-            <form class="popup__form" name="popup__form" method="POST">
-                <input type="text" class="popup__field popup__field_type_name" name="popup__name" placeholder="Имя">
-                <input type="text" class="popup__field popup__field_type_status" name="popup__status" placeholder="О себе">
+            <form class="popup__form popup__form_name_profile" name="popup__form" method="POST">
+                <input type="text" class="popup__field popup__field_type_name" placeholder="Имя">
+                <input type="text" class="popup__field popup__field_type_info" placeholder="О себе">
                 <button class="popup__button" type="submit">Сохранить</button>
             </form>
         </div>
     </div>
-
+    <div class="popup popup__place">
+        <div class="popup__container">
+            <button type="button" class="popup__close popup__close_name_place"> </button>
+            <h2 class="popup__text">Новое место</h2>
+            <form class="popup__form popup__form_name_place" name="popup__form" method="POST">
+                <input type="text" class="popup__field popup__field_type_name" placeholder="Название">
+                <input type="text" class="popup__field popup__field_type_info" placeholder="Ссылка на картинку">
+                <button class="popup__button" type="submit">Создать</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup__image">
+        <figure class="popup__img-container">
+            <button type="button" class="popup__close popup__close_name_image"> </button>
+            <img class="popup__img" src="https://million-wallpapers.ru/wallpapers/0/86/499834461821443/vodoem-v-lesu-u-podnozhya-gor.jpg" alt="Здесь могла быть картинка">
+            <figcaption class="popup__caption">1234</figcaption>
+        </figure>
+    </div>
+    <template id="card">
+        <div class="card ">
+            <div  class="card__image "></div>
+            <div class="card__trash"></div>
+            <div class="card__description ">
+                <h2 class="card__name "></h2>
+                <button type="button " class="card__like ">
+                    </button>
+            </div>
+        </div>
+    </template>
     <script src="./scripts/script.js "></script>
 </body>
 

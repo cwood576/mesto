@@ -4,4 +4,9 @@
     border-radius: 10px;
     overflow: hidden;
     background-color: white;
+    max-width: 282px;
+    justify-content: center;
+    justify-items: stretch;
+    justify-self: stretch;
+    position: relative;
 }

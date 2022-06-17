@@ -9,13 +9,21 @@
 
 @media screen and (max-width: 1279px) {
     .cards {
-        grid-template-columns: repeat(2, minmax(282px, auto));
+        grid-template-columns: repeat(2, 282px);
         grid-template-rows: auto;
     }
 }
 
 @media screen and (max-width: 786px) {
     .cards {
-        grid-template-columns: repeat(1, minmax(282px, 400px));
+        grid-template-columns: repeat(1, 282px);
+        grid-template-rows: repeat(1, auto);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .cards {
+        grid-template-columns: repeat(1, 282px);
+        grid-template-rows: repeat(1, 361);
     }
 }

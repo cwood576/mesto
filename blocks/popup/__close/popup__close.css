@@ -1,7 +1,7 @@
 .popup__close {
     position: absolute;
-    left: 101%;
-    top: -11%;
+    right: -40px;
+    top: -40px;
     width: 32px;
     height: 32px;
     object-fit: contain;
@@ -19,8 +19,8 @@
 
 @media screen and (max-width: 425px) {
     .popup__close {
-        left: 91%;
-        top: -13%;
+        right: 0;
+        top: -36px;
         width: 20px;
         height: 20px;
     }

@@ -6,6 +6,7 @@
     justify-content: space-between;
     margin: 0 15px 0 21px;
     align-items: center;
+    background-color: white;
 }
 
 @media screen and (max-width: 1279px) {
@@ -31,7 +32,9 @@
 
 @media screen and (max-width: 425px) {
     .card__description {
-        height: calc(79 / 320 * (100vw + 16px));
-        margin: 0 calc(15 / 320 * 100vw) 0 calc(21 / 320 * 100vw);
+        /* height: calc(79 / 320 * (100vw + 16px));
+        margin: 0 calc(15 / 320 * 100vw) 0 calc(21 / 320 * 100vw); */
+        height: 79px;
+        margin: 0 15px 0 21px;
     }
 }
