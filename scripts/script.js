@@ -5,19 +5,19 @@ let profileStatus = document.querySelector('.profile__status');
 let addButton = document.querySelector('.profile__add');
 
 // Объявляем переменные попапа редактирования профиля
-let popupProfile = document.querySelector('.popup__profile');
+let popupProfile = document.querySelector('.popup_name_profile');
 let popupName = document.querySelector('.popup__field_type_name');
 let popupInfo = document.querySelector('.popup__field_type_info');
 let closeProfilePopup = document.querySelector('.popup__close_name_profile');
 let popupFormProfile = document.querySelector('.popup__form_name_profile');
 
 // Объявляем переменные попапа добавления карточек
-let popupPlace = document.querySelector('.popup__place');
+let popupPlace = document.querySelector('.popup_name_place');
 let closePlacePopup = document.querySelector('.popup__close_name_place');
 let popupFormPlace = document.querySelector('.popup__form_name_place');
 
 // Объявляем переменные попапа картинок карточек
-let popupImage = document.querySelector('.popup__image');
+let popupImage = document.querySelector('.popup_name_image');
 let closeImagePopup = document.querySelector('.popup__close_name_image');
 let popupImg = document.querySelector('.popup__img');
 let popupCaption = document.querySelector('.popup__caption');
@@ -105,7 +105,7 @@ const createNewCards = (evt) => {
         link: `${evt.target.querySelector('.popup__field_type_info ').value}`
     }];
     createCards(cardArr)
-    closePopupPlace()
+    closePopup(popupPlace)
 }
 
 const openPopup = (popupName) => {
