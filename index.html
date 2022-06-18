@@ -44,8 +44,8 @@
             <button type="button" class="popup__close popup__close_name_profile"> </button>
             <h2 class="popup__text">Редактировать профиль</h2>
             <form class="popup__form popup__form_name_profile" name="popup__form" method="POST">
-                <input type="text" class="popup__field popup__field_type_name" placeholder="Имя">
-                <input type="text" class="popup__field popup__field_type_info" placeholder="О себе">
+                <input type="text" name="name" class="popup__field popup__field_type_name" placeholder="Имя">
+                <input type="text" name="info" class="popup__field popup__field_type_info" placeholder="О себе">
                 <button class="popup__button" type="submit">Сохранить</button>
             </form>
         </div>
@@ -64,14 +64,14 @@
     <div class="popup popup_name_image">
         <figure class="popup__img-container">
             <button type="button" class="popup__close popup__close_name_image"> </button>
-            <img class="popup__img" alt="Здесь могла быть картинка">
+            <img class="popup__img" src="#" alt="Здесь могла быть картинка">
             <figcaption class="popup__caption"></figcaption>
         </figure>
     </div>
     <template id="card">
         <div class="card ">
             <div  class="card__image "></div>
-            <div class="card__trash"></div>
+            <button  type="button " class="card__trash"></button>
             <div class="card__description ">
                 <h2 class="card__name "></h2>
                 <button type="button " class="card__like ">
@@ -79,6 +79,7 @@
             </div>
         </div>
     </template>
+    <script src="./scripts/initialCards.js "></script>
     <script src="./scripts/script.js "></script>
 </body>
 
