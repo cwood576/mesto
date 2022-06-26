@@ -1,0 +1,12 @@
+.popup__error:first-child {
+    margin: 5px 36px 13px 36px;
+}
+
+.popup__error {
+    margin: 5px auto 32px auto;
+    width: calc(((430 - 72) / 430) * 100%);
+    color: rgba(255, 0, 0, 1);
+    font-size: 12px;
+    line-height: 15px;
+    align-self: flex-start;
+}

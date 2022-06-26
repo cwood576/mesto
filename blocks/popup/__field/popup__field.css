@@ -7,27 +7,31 @@
     font-weight: 400;
 }
 
+.popup__field:invalid {
+    border-bottom: 1px solid rgba(255, 0, 0, 1);
+}
+
 .popup__field:first-child {
-    margin: 0 auto 30px auto;
+    margin: 0 auto 0 auto;
     padding: 13px 0 13px 0;
 }
 
 .popup__field:nth-child(2n) {
-    margin: 0 auto 48px auto;
+    margin: 0 auto 0 auto;
     padding: calc(13 / 1280 * 100vw) 0 calc(13 / 1280 * 100vw) 0;
 }
 
 @media screen and (max-width: 678px) {
     .popup__field:first-child {
-        margin: 0 auto 40px auto;
+        margin: 0 auto 0 auto;
     }
     .popup__field:nth-child(2n) {
-        margin: 0 auto 45px auto;
+        margin: 0 auto 0 auto;
     }
 }
 
 @media screen and (max-width: 425px) {
     .popup__field:first-child {
-        margin: 0 auto 30px auto;
+        margin: 0 auto 0 auto;
     }
 }
