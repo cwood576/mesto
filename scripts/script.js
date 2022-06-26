@@ -11,6 +11,7 @@ const popupFieldInfo = document.querySelector('.popup__field_type_info');
 const closeProfilePopup = document.querySelector('.popup__close_name_profile');
 const popupFormProfile = document.querySelector('.popup__form_name_profile');
 
+
 // Объявляем переменные попапа добавления карточек
 const popupPlace = document.querySelector('.popup_name_place');
 const closePlacePopup = document.querySelector('.popup__close_name_place');
@@ -92,10 +93,18 @@ const createNewCards = (evt) => {
 
 const openPopup = (popupName) => {
     popupName.classList.add('popup_opened');
+    document.addEventListener("keyup", (evt) => {
+        if (evt.key === 'Escape') {
+            closePopup(popupName)
+        }
+    });
 }
 
 const closePopup = (popupName) => {
     popupName.classList.remove('popup_opened');
+    if (popupName === popupProfile) {
+        cleanErrorMessage(popupName);
+    }
 }
 
 const saveProfile = (evt) => {
@@ -106,22 +115,35 @@ const saveProfile = (evt) => {
 }
 
 
-popupFormProfile.addEventListener('submit', saveProfile);
-popupFormPlace.addEventListener('submit', createNewCards);
+popupProfile.addEventListener('click', (evt) => {
+    if (evt.target === popupProfile || evt.target === closeProfilePopup) {
+        closePopup(popupProfile)
+    }
+});
+popupPlace.addEventListener('click', (evt) => {
+    if (evt.target === popupPlace || evt.target === closePlacePopup) {
+        closePopup(popupPlace)
+    }
+});
+popupImage.addEventListener('click', (evt) => {
+    if (evt.target === popupImage || evt.target === closeImagePopup) {
+        closePopup(popupImage)
+    }
+});
+
+
 editButton.addEventListener("click", () => {
     popupFieldName.value = profileName.textContent;
     popupFieldInfo.value = profileStatus.textContent;
     openPopup(popupProfile);
 });
-closePlacePopup.addEventListener("click", () => {
-    closePopup(popupPlace);
-});
-closeProfilePopup.addEventListener("click", () => {
-    closePopup(popupProfile);
-});
-closeImagePopup.addEventListener('click', () => {
-    closePopup(popupImage);
-});
 addButton.addEventListener('click', () => {
     openPopup(popupPlace);
 })
+popupFormProfile.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+
+});
+popupFormPlace.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+});
