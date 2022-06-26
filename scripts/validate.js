@@ -15,11 +15,9 @@ const enableValidation = {
 const submitActive = (form) => {
     if (form.classList.contains(enableValidation.formNameList.place)) {
         form.addEventListener('submit', createNewCards);
-        console.log(123)
 
     } else if (form.classList.contains(enableValidation.formNameList.profile)) {
         form.addEventListener('submit', saveProfile);
-        console.log(333)
 
     }
 }
