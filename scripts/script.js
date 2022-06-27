@@ -97,6 +97,8 @@ const openPopup = (popupName) => {
         if (evt.key === 'Escape') {
             closePopup(popupName)
         }
+    }, {
+        once: true
     });
 }
 
