@@ -1,6 +1,6 @@
 const popupForms = Array.from(document.querySelectorAll('.popup__form'));
 
-const enableValidation = {
+const configValidation = {
     formSelector: '.popup__form',
     inputSelector: '.popup__field',
     submitButtonSelector: '.popup__button',
@@ -12,38 +12,19 @@ const enableValidation = {
     }
 }
 
-const submitActive = (form) => {
-    if (form.classList.contains(enableValidation.formNameList.place)) {
-        form.addEventListener('submit', createNewCards);
-
-    } else if (form.classList.contains(enableValidation.formNameList.profile)) {
-        form.addEventListener('submit', saveProfile);
-
-    }
-}
-const submitDisable = (form) => {
-    if (form.classList.contains(enableValidation.formNameList.place)) {
-        form.removeEventListener('submit', createNewCards);
-    } else if (form.classList.contains(enableValidation.formNameList.profile)) {
-        form.removeEventListener('submit', saveProfile);
-    }
-}
-
-
-
-const changeButtonState = (form, formFields) => {
+const changeButtonState = (form, formFields, config) => {
     if (formFields.every(field => field.validity.valid)) {
-        form.querySelector(`${ enableValidation.submitButtonSelector } `).classList.add(`${ enableValidation.activeButtonClass }`);
+        form.querySelector(`${ config.submitButtonSelector } `).classList.add(`${ config.activeButtonClass }`);
         submitActive(form)
     } else {
-        form.querySelector(`${ enableValidation.submitButtonSelector }`).classList.remove(`${ enableValidation.activeButtonClass }`)
+        form.querySelector(`${ config.submitButtonSelector }`).classList.remove(`${ config.activeButtonClass }`)
         submitDisable(form)
 
     }
 }
 
-const changeErrorMessage = (evt) => {
-    evt.target.parentNode.querySelector(`.${ enableValidation.inputErrorClass }_${ evt.target.name }`).textContent = evt.target.validationMessage;
+const changeErrorMessage = (evt, config) => {
+    evt.target.parentNode.querySelector(`.${ config.inputErrorClass }_${ evt.target.name }`).textContent = evt.target.validationMessage;
 }
 
 const cleanErrorMessage = (popupName) => {
@@ -55,18 +36,18 @@ const cleanErrorMessage = (popupName) => {
 }
 
 
-const validateForm = (form) => {
-    const formFields = Array.from(form.querySelectorAll(`${ enableValidation.inputSelector }`));
+const validateForm = (form, config) => {
+    const formFields = Array.from(form.querySelectorAll(`${ config.inputSelector }`));
     form.addEventListener('input', (evt) => {
-        changeButtonState(form, formFields);
-        changeErrorMessage(evt);
+        changeButtonState(form, formFields, config);
+        changeErrorMessage(evt, config);
     })
 }
 
-const validateAllForms = () => {
-    Array.from(document.querySelectorAll(`${ enableValidation.formSelector }`)).forEach(form => {
-        validateForm(form)
+const validateAllForms = (config) => {
+    Array.from(document.querySelectorAll(`${ config.formSelector }`)).forEach(form => {
+        validateForm(form, config)
     });
 }
 
-validateAllForms(enableValidation);
+validateAllForms(configValidation);

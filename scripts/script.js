@@ -8,18 +8,18 @@ const addButton = document.querySelector('.profile__add');
 const popupProfile = document.querySelector('.popup_name_profile');
 const popupFieldName = document.querySelector('.popup__field_type_name');
 const popupFieldInfo = document.querySelector('.popup__field_type_info');
-const closeProfilePopup = document.querySelector('.popup__close_name_profile');
+const popupProfileCloseButton = document.querySelector('.popup__close_name_profile');
 const popupFormProfile = document.querySelector('.popup__form_name_profile');
 
 
 // Объявляем переменные попапа добавления карточек
 const popupPlace = document.querySelector('.popup_name_place');
-const closePlacePopup = document.querySelector('.popup__close_name_place');
+const popupPlaceCloseButton = document.querySelector('.popup__close_name_place');
 const popupFormPlace = document.querySelector('.popup__form_name_place');
 
 // Объявляем переменные попапа картинок карточек
 const popupImage = document.querySelector('.popup_name_image');
-const closeImagePopup = document.querySelector('.popup__close_name_image');
+const popupImageCloseButton = document.querySelector('.popup__close_name_image');
 const popupImg = document.querySelector('.popup__img');
 const popupCaption = document.querySelector('.popup__caption');
 
@@ -35,6 +35,23 @@ const cardsTemplate = document.querySelector('#card').content.querySelector('.ca
 window.addEventListener('load', () => {
     document.querySelector('.preload').classList.remove('preload');
 });
+
+const submitActive = (form) => {
+    if (form.classList.contains(configValidation.formNameList.place)) {
+        form.addEventListener('submit', createNewCards);
+
+    } else if (form.classList.contains(configValidation.formNameList.profile)) {
+        form.addEventListener('submit', saveProfile);
+
+    }
+}
+const submitDisable = (form) => {
+    if (form.classList.contains(configValidation.formNameList.place)) {
+        form.removeEventListener('submit', createNewCards);
+    } else if (form.classList.contains(configValidation.formNameList.profile)) {
+        form.removeEventListener('submit', saveProfile);
+    }
+}
 
 const likeToggle = (evt) => {
     evt.target.classList.toggle('card__like_active')
@@ -81,7 +98,7 @@ renderCards(cardsList);
 
 const createNewCards = (evt) => {
     evt.preventDefault();
-    let cardArr = [{
+    const cardArr = [{
         name: `${evt.target.querySelector('.popup__field_type_name ').value}`,
         link: `${evt.target.querySelector('.popup__field_type_info ').value}`
     }];
@@ -89,24 +106,17 @@ const createNewCards = (evt) => {
     renderCards(cardsList);
     closePopup(popupPlace);
     evt.target.reset();
+    evt.target.querySelector('.popup__button').classList.remove('popup__button_active')
 }
 
 const openPopup = (popupName) => {
     popupName.classList.add('popup_opened');
-    document.addEventListener("keyup", (evt) => {
-        if (evt.key === 'Escape') {
-            closePopup(popupName)
-        }
-    }, {
-        once: true
-    });
+    document.addEventListener("keyup", escButtonClose);
 }
 
 const closePopup = (popupName) => {
     popupName.classList.remove('popup_opened');
-    if (popupName === popupProfile) {
-        cleanErrorMessage(popupName);
-    }
+    document.removeEventListener('keyup', escButtonClose)
 }
 
 const saveProfile = (evt) => {
@@ -118,25 +128,33 @@ const saveProfile = (evt) => {
 
 
 popupProfile.addEventListener('click', (evt) => {
-    if (evt.target === popupProfile || evt.target === closeProfilePopup) {
+    if (evt.target === popupProfile || evt.target === popupProfileCloseButton) {
         closePopup(popupProfile)
     }
 });
 popupPlace.addEventListener('click', (evt) => {
-    if (evt.target === popupPlace || evt.target === closePlacePopup) {
+    if (evt.target === popupPlace || evt.target === popupPlaceCloseButton) {
         closePopup(popupPlace)
     }
 });
 popupImage.addEventListener('click', (evt) => {
-    if (evt.target === popupImage || evt.target === closeImagePopup) {
+    if (evt.target === popupImage || evt.target === popupImageCloseButton) {
         closePopup(popupImage)
     }
 });
 
+const escButtonClose = (evt) => {
+    if (evt.key === 'Escape') {
+        console.log(123)
+        let popupName = document.querySelector('.popup_opened')
+        closePopup(popupName);
+    }
+}
 
 editButton.addEventListener("click", () => {
     popupFieldName.value = profileName.textContent;
     popupFieldInfo.value = profileStatus.textContent;
+    cleanErrorMessage(popupProfile);
     openPopup(popupProfile);
 });
 addButton.addEventListener('click', () => {
