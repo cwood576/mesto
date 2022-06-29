@@ -38,6 +38,7 @@ window.addEventListener('load', () => {
 
 const submitActive = (form) => {
     if (form.classList.contains(configValidation.formNameList.place)) {
+        form.querySelector('.popup__button').removeAttribute("disabled");
         form.addEventListener('submit', createNewCards);
 
     } else if (form.classList.contains(configValidation.formNameList.profile)) {
@@ -48,6 +49,8 @@ const submitActive = (form) => {
 const submitDisable = (form) => {
     if (form.classList.contains(configValidation.formNameList.place)) {
         form.removeEventListener('submit', createNewCards);
+        form.querySelector('.popup__button').setAttribute("disabled", '');
+
     } else if (form.classList.contains(configValidation.formNameList.profile)) {
         form.removeEventListener('submit', saveProfile);
     }
@@ -106,7 +109,9 @@ const createNewCards = (evt) => {
     renderCards(cardsList);
     closePopup(popupPlace);
     evt.target.reset();
-    evt.target.querySelector('.popup__button').classList.remove('popup__button_active')
+    const button = evt.target.querySelector('.popup__button');
+    button.classList.remove('popup__button_active');
+    button.setAttribute("disabled", "");
 }
 
 const openPopup = (popupName) => {
@@ -145,8 +150,7 @@ popupImage.addEventListener('click', (evt) => {
 
 const escButtonClose = (evt) => {
     if (evt.key === 'Escape') {
-        console.log(123)
-        let popupName = document.querySelector('.popup_opened')
+        const popupName = document.querySelector('.popup_opened')
         closePopup(popupName);
     }
 }
@@ -159,7 +163,8 @@ editButton.addEventListener("click", () => {
 });
 addButton.addEventListener('click', () => {
     openPopup(popupPlace);
-})
+});
+
 popupFormProfile.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
