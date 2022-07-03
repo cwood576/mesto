@@ -132,17 +132,17 @@ const saveProfile = (evt) => {
 }
 
 
-popupProfile.addEventListener('click', (evt) => {
+popupProfile.addEventListener('mousedown', (evt) => {
     if (evt.target === popupProfile || evt.target === popupProfileCloseButton) {
         closePopup(popupProfile)
     }
 });
-popupPlace.addEventListener('click', (evt) => {
+popupPlace.addEventListener('mousedown', (evt) => {
     if (evt.target === popupPlace || evt.target === popupPlaceCloseButton) {
         closePopup(popupPlace)
     }
 });
-popupImage.addEventListener('click', (evt) => {
+popupImage.addEventListener('mousedown', (evt) => {
     if (evt.target === popupImage || evt.target === popupImageCloseButton) {
         closePopup(popupImage)
     }
