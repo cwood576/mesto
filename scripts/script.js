@@ -1,3 +1,9 @@
+// Подключаем модули
+import { Card } from './Card.js';
+import { configValidation } from './configValidation.js';
+import { FormValidator } from './FormValidator.js';
+import { initialCards } from './initialCards.js';
+
 // Объявляем переменные профиля
 const editButton = document.querySelector('.profile__edit');
 const profileName = document.querySelector('.profile__name');
@@ -23,13 +29,7 @@ const popupImageCloseButton = document.querySelector('.popup__close_name_image')
 const popupImg = document.querySelector('.popup__img');
 const popupCaption = document.querySelector('.popup__caption');
 
-// Объявляем блок карточек
-const cardsBlock = document.querySelector('.cards');
 
-let cardsList;
-
-// Объявляем шаблон карточки
-const cardsTemplate = document.querySelector('#card').content.querySelector('.card');
 
 // Отключаем анимации до окончательной загрузки
 window.addEventListener('load', () => {
@@ -56,57 +56,33 @@ const submitDisable = (form) => {
     }
 }
 
-const likeToggle = (evt) => {
-    evt.target.classList.toggle('card__like_active')
-}
-
-const cardDelete = (evt) => {
-    evt.target.parentNode.remove()
-}
 
 const openPopupImage = (evt) => {
     popupImg.src = evt.target.style.backgroundImage.slice(5, -2);
     popupImg.alt = evt.target.parentNode.querySelector('.card__name').textContent;
     popupCaption.textContent = evt.target.parentNode.querySelector('.card__name').textContent;
     openPopup(popupImage);
-
 }
 
-const createCards = (arr) => {
-    cardsList = []
-    array = arr.reverse()
-    array.forEach(x => {
-        let card;
-        card = cardsTemplate.cloneNode(true)
-        card.querySelector('.card__like').addEventListener('click', likeToggle)
-        card.querySelector('.card__image').addEventListener('click', openPopupImage)
-        card.querySelector('.card__trash').addEventListener('click', cardDelete)
-        card.querySelector('.card__image').style.backgroundImage = `url(${x.link})`;
-        card.querySelector('.card__image').alt = x.name;
 
-        card.querySelector('.card__name').textContent = x.name;
+initialCards.forEach(x => {
+    let a = new Card(x, openPopupImage);
+    a.renderCards();
+})
 
-        cardsList.push(card);
-    })
-    return cardsList
-}
-
-const renderCards = (cardsArr) => {
-    cardsArr.forEach(x => {
-        cardsBlock.prepend(x)
-    })
-}
-createCards(initialCards);
-renderCards(cardsList);
+Array.from(document.querySelectorAll(`${ configValidation.formSelector }`)).forEach(form => {
+    let formElement = new FormValidator(configValidation, form, submitActive, submitDisable)
+    formElement.enableValidation();
+});
 
 const createNewCards = (evt) => {
     evt.preventDefault();
-    const cardArr = [{
+    const newCardObj = {
         name: `${evt.target.querySelector('.popup__field_type_name ').value}`,
         link: `${evt.target.querySelector('.popup__field_type_info ').value}`
-    }];
-    createCards(cardArr);
-    renderCards(cardsList);
+    };
+    let newCard = new Card(newCardObj, openPopupImage);
+    newCard.renderCards();
     closePopup(popupPlace);
     evt.target.reset();
     const button = evt.target.querySelector('.popup__button');
@@ -114,6 +90,13 @@ const createNewCards = (evt) => {
     button.setAttribute("disabled", "");
 }
 
+const cleanErrorMessage = (popupName) => {
+    const popupError = popupName.querySelectorAll('.popup__error');
+    popupError.forEach(errorMessage => {
+        errorMessage.textContent = ''
+    })
+
+}
 const openPopup = (popupName) => {
     popupName.classList.add('popup_opened');
     document.addEventListener("keyup", escButtonClose);
